@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>生活相册</title>
+	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+  <style>
+  *{
+    padding:0;
+    margin:0;
+  }
+  body{
+    background-color:#BDE4C9;
+  }
+  .cont_img{
+    margin:0 auto;
+    margin-top:35px;
+    margin-bottom:30px;
+    width:80%;
+    height:550px;
+    box-shadow:0px 3px 10px 0px #333;
+  }
+  </style>
+ <script type="text/javascript"> 
+  var curIndex = 0; 
+  var arr = new Array();   //图片数组
+  arr[0] = "images/life1.jpeg"; 
+  arr[1] = "images/life2.jpeg"; 
+  arr[2] = "images/life3.jpg"; 
+  arr[3] = "images/life4.JPG"; 
+  arr[4] = "images/life5.jpg"; 
+  arr[5] = "images/life6.jpg"; 
+  arr[6] = "images/life7.jpg"; 
+  // changeImg函数控制图片的显示
+  function changeImg() {     
+   var show_pic = document.getElementById("show_pic"); 
+   //如果当前播放的是最后一张图片，则将播放最开始的图片
+   if (curIndex == arr.length-1) { 
+    curIndex = 0; 
+   } else { 
+    curIndex += 1; 
+     } 
+   show_pic.src = arr[curIndex];  //获取图片
+  } 
+
+   var My_timer = setInterval("changeImg()",1000); 
+
+   function stop_timer(){
+      clearInterval(My_timer);
+   }
+
+  function Rstar_timer(){
+       My_timer = setInterval("changeImg()",1000);
+    }
+ </script> 
+
+<body>
+<div class="top">
+  <div class="div_nav clearfix">
+    <img src="images/logo.png"height="40px">
+    <ul class="nav_ul clearfix">
+      <li>
+        <a href="index.html">主页</a>
+      </li>
+      <li>
+        <a href="life.html">生活相册</a>
+      </li>     
+      <li>
+        <a href="work.html">曾经作品</a>
+      </li>
+      <li>
+        <a href="personal.html">个人简历</a>
+      </li>
+      <li>
+        <a href="about.html">关于</a>
+      </li>
+  </ul>
+</div>
+</div>
+<div class="cont_img">
+  <img id = "show_pic" src = "images/life1.jpeg" width="100%" height="100%" onmouseover="stop_timer()" onmouseout="Rstar_timer();"/> 
+</div>
+<span class="span_footer">Copyright&nbsp;&copy;&nbsp;2015 PanWeiYan&nbsp;&nbsp;All Rights Reserved.</span>
+   <div  id="roll" class="roll">
+       <span id="roll_top" title="返回顶部" class="icon-circle-arrow-up icon-3x"></span>
+   </div>
+</body>
+</body>
+</html>

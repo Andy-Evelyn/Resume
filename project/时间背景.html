@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时间背景色</title>
+	<style>
+		#time{
+			width: 700px;
+			height: 300px;
+			margin: 100px auto;
+			font-size: 150px;
+			text-align: center;
+			color:#fff;
+		}
+	</style>
+</head>
+<body style="background-color: rgb(10, 58, 5);">
+	<div id="time"></div>
+<script>
+	function showTimes() {
+		var t = new Date();   //创建日期对象
+		var hour = t.getHours() <= 9 ? '0' + t.getHours() : t.getHours();
+		var minute = t.getMinutes() <= 9 ? '0' + t.getMinutes() : t.getMinutes();
+		var second = t.getSeconds() <= 9 ? '0' + t.getSeconds() : t.getSeconds();
+		var show =  hour + ":" + minute + ":" + second + " " ;  //显示当前时间
+		var time = document.getElementById("time");
+		time.innerHTML = show;
+		var bgColor  = "#" + hour + minute + second;
+		document.body.style.backgroundColor = bgColor; //用当前时间来改变背景色
+		setTimeout(showTimes,1000);    //1000毫秒后调用showTime函数
+	}
+		showTimes();
+</script>
+
+</body>
+</html>

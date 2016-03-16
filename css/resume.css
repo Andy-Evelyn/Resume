@@ -1,0 +1,98 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	// background-color:#CCCCCC;
+		// background-color:#CCFF99;
+
+	// background-color:#FFCC99;
+	background-color:#FFCCCC;
+	overflow:hidden;
+}
+.main{
+	width:600px;
+	height:665px;
+	margin:0 auto;
+	text-align: center;
+} 
+.main>img{
+	padding-top:100px;
+	border:none;
+}
+.main>h1{
+	color:#339999;
+	margin-top:30px;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #339999;
+}
+.main>p{
+	color:#339999;
+	margin-top:40px;
+	font-size:1.5em;
+	font-weight:bold;
+}
+.main>a{
+	text-decoration: none;
+	color:#FFFFFF;
+	display: block;
+    width: 200px;    
+    font-size: 1.5em;
+    height: 50px;
+    border-radius: 12px;
+    margin: 40px auto;
+    border: 2px solid #fff;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    -webkit-animation:resume 1s linear 1;
+ 	 -moz-animation:resume 1s linear 1;
+      -ms-animation:resume 1s linear 1;
+       -o-animation:resume 1s linear 1;
+          animation:resume 1s linear 1;
+}
+@keyframes resume{
+  	0%{
+  		bottom:-200px;
+  	}
+  	100%{
+  		bottom:0px;
+  	}
+  }
+@-webkit-keyframes resume{
+  	0%{
+  		bottom:-200px;
+  	}
+  	100%{
+  		bottom:0px;
+  	}
+  }
+.main>a:hover{
+	-webkit-animation: my_resume both 1.5s ease-in-out;
+	   -moz-animation: my_resume both 1.5s ease-in-out;
+	    -ms-animation: my_resume both 1.5s ease-in-out;
+	     -o-animation: my_resume both 1.5s ease-in-out;
+	        animation: my_resume both 1.5s ease-in-out;
+}
+@keyframes my_resume{
+   0% {
+     font-size: 10px;
+    }
+   30% {
+     font-size: 40px;
+    }
+   100% {
+    font-size: 40px;
+     }
+}
+@-webkit-keyframes my_resume{
+   0% {
+     font-size: 10px;
+    }
+   30% {
+     font-size: 40px;
+    }
+   100% {
+    font-size: 40px;
+     }
+}

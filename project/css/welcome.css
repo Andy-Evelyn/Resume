@@ -1,0 +1,119 @@
+body{
+	background-color: #83AF9B !important;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#main{
+	width: 1024px;
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border-radius: 5px;
+	box-shadow:0px 3px 10px 0px #333;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#topMenu{
+	font-family: 微软雅黑;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 1px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	margin-bottom: 0;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#title{
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+	width: 910px;
+	background-image: url(../images/t1.png);
+	margin-top: 25px;
+	border-bottom: solid 1px #ccc;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+.f1{
+	font-family: 微软雅黑;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+.f2{
+	font-family: 微软雅黑;
+	font-size: 13px;
+	color: #666;
+	text-indent: 2em;
+	letter-spacing: 1px;
+	line-height: 24px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+.f3{
+	font-family: 微软雅黑;
+	font-size: 13px;
+	color: #666;
+	letter-spacing: 1px;
+	line-height: 24px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#content{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+#btnBorder{
+	width: 300px;
+	height: 80px;
+	background-color: #e4e4e4;
+	margin-left: auto;
+	margin-right: auto;
+	border:solid 1px #cacaca;
+	border-radius:41px;
+	box-shadow:0px 1px 3px 0px #cacaca inset;
+	margin-bottom: 60px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#btn{
+	width: 280px;
+	height: 60px;
+	background-color: #e9622a;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	border:solid 1px #b44213;
+	border-radius:31px;
+	box-shadow:0px 1px 1px 0px #eee inset;
+	text-align: center;
+	line-height: 60px;
+	font-size: 22px;
+	font-family: 宋体;
+	color: #fff;
+	font-weight: bold;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	cursor: pointer;
+}
+#btn:ACTIVE {
+	box-shadow:0px 1px 1px 0px #000 inset;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+#bottomMenu{
+	font-family: 微软雅黑;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 1px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-bottom: 0;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}

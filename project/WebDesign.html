@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html lang="zh">
+  <head>
+     <title>网页设计</title>
+     <meta charset="UTF-8"/>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+     <link rel="stylesheet" type="text/css" href="css/wnav.css"/>
+     <link rel="stylesheet" type="text/css" href="css/wmain.css"/>
+     <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+     <link rel="stylesheet" type="text/css" href="css/animate.min.css" media="screen"/>
+     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+     <link rel="stylesheet" type="text/css" href="css/font-awesome-ie7.min.css"/>
+
+     <!--[if IE]>  
+      <style type="text/css">  
+      .content_main {  
+            background:transparent;  
+            background-size: cover;
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#795E5E5E,endColorstr=#795E5E5E);  
+            background:url(images/wmain.jpg) no-repeat;
+            zoom: 1;  
+           }   
+      </style>  
+     <![endif]-->  
+       
+       <!--[if lte IE 8]>   //兼容大屏背景图不铺满
+         <style type="text/css">
+         .content_main{
+          background-size: cover;
+          -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='D:\前端资料\比赛7\images\main5.jpg', sizingMethod='scale')";
+          filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='D:\前端资料\比赛7\images\wmain.jpg', sizingMethod='scale');
+        }
+       </style>
+       <![endif]-->
+</head>
+<body> 
+   <div class="top">
+     <div class="div_nav clearfix"> 
+         <a href="#"><img src="images/logo_parabola.png" height="40px" style="border:0px;"></a>
+          <ul class="nav_ul clearfix">
+            <li><a href="#">主页</a></li>
+            <li><a href="#">个人展区</a></li>
+            <li><a href="#">团体展区</a></li>
+            <li><a href="#">提交作品</a></li>
+            <li><a href="#">修改作品</a></li>
+            <li><a href="#">关于</a></li>
+          </ul>
+     </div>
+   </div>
+   <div class="content_main">
+      <div class="content">
+        <div class="div_contentone">
+            <h2>网页设计大赛</h2>
+        </div>
+        <div class="div_contenttwo">
+           <h3>Let's create something amazing.</h3>
+        </div>
+        <div class="about_button" id="about_button">
+              <button href="#st-panel-1" class="marketing-launch-button" style="margin-right:15px">
+                比赛通知
+              </button>
+              <button href="#st-panel-2" class="marketing-launch-button">
+                联系我们
+              </button>
+      </div>
+   </div>
+</div>
+
+<div id="st-panel-1" class="about_big">
+   <div class="introduce">
+        <div class="pic_one">
+           <img src="images/cover.jpg" width="500px" height="400px"/> 
+        </div>
+        <div class="sub_introduce">
+          <div class="about_all" style="float:left; margin-top:95px; ">
+            <h2>比赛通知</h2>
+            <p>比赛将于<strong>6月初</strong>开始，结束于<strong>6月底</strong>。
+            <p>本次比赛分为个人赛和团体赛两部分
+            <p>本次比赛的目的在于激发同学们对网页是热情与兴趣。详情请进入相关页面查看。
+            </div>
+        </div>
+   </div>
+      <hr>
+</div>
+
+<div id="st-panel-2" class="about_big">
+  <div class="introduce">
+      <div class="pic_two">
+         <img src="images/bg-top.jpg" width="500px" height="400px"/>
+      </div>
+      <div class="sub_introduce" style="float:left;">
+         <div class="about_all">
+           <h2>联系我们</h2>
+           <p>不知道怎么提交作品? 作品提交出现问题?
+           收不到验证邮件?作品展览看不到你们的作品?
+           对我们平台有修改建议?遇到了什么bug?......
+           <p>那么请联系我们，我们会尽快为你解决！
+  　　     <p><h3>联系方式：</h3>
+           <p>邮箱：we_are_parabola@163.com
+  　　     <p>qq: 43980000000
+         </div>
+     </div>
+  </div> 
+    <hr>
+</div>
+
+<span class="span_footer">Copyright 2015 By parabola工作室版权所有 All Rights</span> 
+
+<div  id="roll" class="roll">
+       <span id="roll_top" title="返回顶部" class="icon-circle-arrow-up icon-3x"></span>
+</div>
+ <script src="js/jquery-2.1.1.min.js"></script>
+     <script src="js/jquery.js"></script>
+     <script>
+
+    $(function(){
+    $("#about_button button").click(function(){
+        var hr = $(this).attr("href");
+        var anh = $(hr).offset().top;
+        $("html,body").stop().animate({scrollTop:anh},800);
+    })
+     });
+
+   $(document).ready(function(){
+     $('#roll').hide();
+     $(window).scroll(function() {
+     if($(window).scrollTop() >= 100){
+      $('#roll').fadeIn(400);
+     }
+     else
+     {
+     $('#roll').fadeOut(200);
+     }
+  });
+    $('#roll_top').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+ });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>实现简易相册的雏形</title>
+	<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}/*将页面中的所有元素的内补丁设置为0，以便于后期的调整*/
+#photo{
+	position:relative;/*相对定位*/
+	width:748px;
+	height:590px;
+	margin:0 auto;/*在标准模式之下将容器居中显示*/
+	background:#A0BF7C;
+}/*定义相册的整体宽高属性及背景颜色，并设置相对定位，便于其子级元素的定位控制*/
+h1{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	width:100px;
+	height:20px;
+	text-align:right;
+	font:normal 12px/1.5em "宋体";
+	color:#FFFFFF;
+}/*设置相册标题的样式，以及利用定位的方式将其控制在相册内容的右下角*/
+ul{
+	float:right;
+	width:148px;
+	height:590px;
+	list-style:none;
+}/*将所有相片一列表形式居左显示*/
+li{
+	float:left;
+	width:54px;
+	height:54px;
+	margin:10px;
+	display:inline;/*解决IE6双倍间距的bug问题*/
+	overflow:hidden;
+}/*将相册列表的默认宽高设置为54px,并浮动排序显示*/
+li a{
+	display:block;
+	width:50px;
+	height:50px;
+	overflow:hidden;
+	border:2px solid #cccccc;
+}/*每个列表中的锚点a标签设置为块元素，宽高都为50px,并设置边框为2px的灰色边框*/
+li a:hover{
+	border:2px solid #2A8861;
+}
+li a:hover img{
+	position:absolute;
+	top:110px;
+	left:10px;
+	margin:0;
+	border:2px solid #FFFFFF;
+}/*当鼠标经过相册缩略图时，以大图片定位显示在左侧*/
+img{
+	display:block;
+	border:0 none;
+	margin:-150px 0 0 -80px;
+	width:400px;
+	height:400px;
+}/*margin的负值是控制图片显示小图的大概位置*/
+</style>
+</head>
+<body>
+	<div id="photo">
+		<h1>简易css相册</h1>
+		<ul>
+			<li>
+				<a href="#">
+					<img src="images/9.jpg" alt=""></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/1.jpg" alt=" "></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/3.jpg" alt=" "></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/4.jpg" alt=" "></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/5.jpg" alt=" "></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/6.jpg" alt=" "></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/7.jpg" alt=" "></a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="images/8.jpg"alt=" "></a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

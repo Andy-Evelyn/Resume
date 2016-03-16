@@ -1,0 +1,57 @@
+.clearfix:after {
+	content: ".";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+.clearfix {
+	*zoom: 1;
+}
+a{
+	text-decoration:none;
+}
+.top{/*导航部分*/
+	height:50px;
+	width:100%;
+	background-color:#fff;
+	font-family: "宋体";
+}
+
+.div_nav{
+	height:50px;
+	width:100%;
+}
+.top .div_nav img{
+	float:left;
+	margin-left:2%;
+	margin-top:5px;
+	width:10%;
+}
+
+.nav_ul{
+	list-style:none;
+	height:50px;
+	width:70%;
+	margin:0 auto;
+}
+.nav_ul li {
+	float:left;
+	height:50px;
+	width:20%;
+	text-align:center;
+	line-height:50px;
+	margin-right:auto;
+}
+.nav_ul li a:link{
+	font-size:18px;
+	color:#1E873B;
+}
+.nav_ul li a:visited{
+	color:#1E873B;
+}
+.nav_ul li a:hover{
+	color:#98DA52;
+}
+
+
