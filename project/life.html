@@ -12,81 +12,136 @@
     padding:0;
     margin:0;
   }
-  body{
-    background-color:#BDE4C9;
-  }
-  .cont_img{
+  ul{list-style:none;}
+  #Box{
     margin:0 auto;
+    position:relative;
     margin-top:35px;
     margin-bottom:30px;
     width:80%;
     height:550px;
     box-shadow:0px 3px 10px 0px #333;
+    cursor:pointer;
+    overflow: hidden;
   }
-  </style>
- <script type="text/javascript"> 
-  var curIndex = 0; 
-  var arr = new Array();   //图片数组
-  arr[0] = "images/life1.jpeg"; 
-  arr[1] = "images/life2.jpeg"; 
-  arr[2] = "images/life3.jpg"; 
-  arr[3] = "images/life4.JPG"; 
-  arr[4] = "images/life5.jpg"; 
-  arr[5] = "images/life6.jpg"; 
-  arr[6] = "images/life7.jpg"; 
-  // changeImg函数控制图片的显示
-  function changeImg() {     
-   var show_pic = document.getElementById("show_pic"); 
-   //如果当前播放的是最后一张图片，则将播放最开始的图片
-   if (curIndex == arr.length-1) { 
-    curIndex = 0; 
-   } else { 
-    curIndex += 1; 
-     } 
-   show_pic.src = arr[curIndex];  //获取图片
-  } 
-
-   var My_timer = setInterval("changeImg()",1000); 
-
-   function stop_timer(){
-      clearInterval(My_timer);
+  #Box .list img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:none;
+  }
+  #Box .count{
+    position:absolute;
+    margin:0 auto;
+    width:250px;
+    left:50%;
+    margin-left: -100px;
+    bottom:10px;
+  }
+  #Box .count li{
+    float:left;
+    width:20px;
+    height:20px;
+    background:#969A6B;
+    margin-right:10px;
+    border-radius:50%;
+  }
+   #Box .count li.current{
+    background:#55622C;
    }
+  </style>
+  <script type="text/javascript"> 
+    window.onload = function(){
+        var Box = document.getElementById("Box");
+        var Img = document.getElementById("show");
+        var index = 0;
+        var liBtn = Box.getElementsByTagName("ul")[0].getElementsByTagName("li");
+        var timer,playTimer; 
+        var prev = Box.children[0].children[1];
+        var next = Box.children[0].children[2];            
+        var arr = new Array();
+        arr[0] = "images/life1.jpeg";
+        arr[1] = "images/life2.jpeg";
+        arr[2] = "images/life3.jpg";
+        arr[3] = "images/life4.jpg";
+        arr[4] = "images/life5.jpg";
+        arr[5] = "images/life6.jpg";
+        arr[6] = "images/life7.jpg";
 
-  function Rstar_timer(){
-       My_timer = setInterval("changeImg()",1000);
-    }
+        (function(){
+            for (var i = 0; i < liBtn.length; i++) {
+            liBtn[i].index = i;
+            liBtn[i].onclick = function() {
+              index = this.index-1;
+              autoChange();
+            };
+          }
+        })();
+
+        function autoChange(){
+          if(index == arr.length - 1){
+            index = 0;
+          }else{
+            index++;
+          }
+          Img.src = arr[index];
+          lichang();
+        }
+
+        function lichang(){
+          for (var i = 0; i < liBtn.length; i++){
+            liBtn[i].className = "";
+          }
+          liBtn[index].className = "current";
+        }
+
+        playTimer = setInterval(autoChange,1500);
+        Box.onmouseover = function() {
+          clearInterval(playTimer);
+        }
+        Box.onmouseout = function() {
+          playTimer = setInterval(autoChange,1500);
+        }
+  };
  </script> 
 
 <body>
-<div class="top">
-  <div class="div_nav clearfix">
-    <img src="images/logo.png"height="40px">
-    <ul class="nav_ul clearfix">
-      <li>
-        <a href="index.html">主页</a>
-      </li>
-      <li>
-        <a href="life.html">生活相册</a>
-      </li>     
-      <li>
-        <a href="work.html">曾经作品</a>
-      </li>
-      <li>
-        <a href="../resume.pdf">个人简历</a>
-      </li>
-      <li>
-        <a href="about.html">关于</a>
-      </li>
-  </ul>
-</div>
-</div>
-<div class="cont_img">
-  <img id = "show_pic" src = "images/life1.jpeg" width="100%" height="100%" onmouseover="stop_timer()" onmouseout="Rstar_timer();"/> 
-</div>
-<span class="span_footer">Copyright&nbsp;&copy;&nbsp;2015 PanWeiYan&nbsp;&nbsp;All Rights Reserved.</span>
-   <div  id="roll" class="roll">
-       <span id="roll_top" title="返回顶部" class="icon-circle-arrow-up icon-3x"></span>
-   </div>
-</body>
+    <div class="top">
+      <div class="div_nav clearfix">
+        <img src="images/logo.png"height="40px">
+        <ul class="nav_ul clearfix">
+          <li>
+            <a href="index.html">主页</a>
+          </li>
+          <li>
+            <a href="life.html">生活相册</a>
+          </li>     
+          <li>
+            <a href="work.html">曾经作品</a>
+          </li>
+          <li>
+            <a href="../resume.pdf">个人简历</a>
+          </li>
+          <li>
+            <a href="about.html">关于</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="Box"> 
+      <div class="list">
+        <img id="show" src="images/life1.jpeg">
+      </div>
+      <ul class="count">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <span class="span_footer">Copyright&nbsp;&copy;&nbsp;2015 PanWeiYan&nbsp;&nbsp;All Rights Reserved.</span>
 </body>
 </html>
