@@ -76,5 +76,4 @@ function checkScroolSlide(){
 	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;   //滚动条滚动的距离
 	var heigth = document.body.clientHeight || document.documentElement.clientHeight;
 	return(lastBoxH<scrollTop+height)?true:false; //返回true时，可以加载数据库，反之，不加载
-	// console.log(scrollTop); 
 }
